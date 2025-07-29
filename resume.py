@@ -150,7 +150,7 @@ def load_model():
 
 model = load_model()
 
-st.title("📄 AI Resume Ranker")
+st.title("📄 AI Powered Resume Screener")
 
 # Step 1: Select category
 selected_category = st.selectbox("Choose a Job Category", ["-- Select --"] + list(job_categories.keys()))
