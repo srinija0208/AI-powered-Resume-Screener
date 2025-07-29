@@ -134,16 +134,7 @@ job_categories = {
     }
 }
 
-# common_skills = ["python", "sql", "excel", "machine learning", "deep learning", "data analysis", 
-#                  "pandas", "numpy", "scikit-learn", "communication", "visualization", "UI design",
-#                  "power bi", "tableau", "nlp", "tensorflow", "keras", "r", "java", "OpenCV","CI/CD",
-#                  "Deep Learning", "cloud experience","tableu","docker","kubernetes","git","databases",
-#                  "Networking", "Linux", "Agile", "Selenium", "PyTest", "JavaScript", "HTML","Spark","hadoop",
-#                  ]
-
-
 ## load model 
-
 @st.cache_resource
 def load_model():
     return SentenceTransformer('all-MiniLM-L6-v2')
@@ -180,7 +171,7 @@ def extract_text_from_pdfs(file):
             text += content
     return text.strip()
 
-# Feedback Generator (simplified — removed missing skills feedback)
+# Feedback Generator 
 def generate_feedback(score):
     if score >= 80:
         return "Excellent match! Your resume is highly aligned with the job."
@@ -194,7 +185,7 @@ def generate_feedback(score):
 # Upload resumes
 uploaded_files = st.file_uploader("Upload Resumes (PDFs)", type=["pdf"], accept_multiple_files=True)
 
-# Main Logic
+# Ranking resumes
 if job_description.strip():
     if job_description.strip() and uploaded_files:
         st.subheader("Ranking Resumes")
@@ -221,7 +212,7 @@ if job_description.strip():
         top_resume = results_df.iloc[0]
         st.success(f"✅ Best Match: {top_resume['Resume']} ({top_resume['Similarity Score']}%)")
 
-        # Download Top 3
+        # Download Top 3 resumes
         st.subheader("📥 Download Top 3 Matching Resumes")
         top3_df = results_df.head(3).reset_index(drop=True)
 
