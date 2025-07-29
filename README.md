@@ -63,4 +63,6 @@ pip install -r requirements.txt
 ```
 streamlit run app.py
 ```
-![alt text](Slide1.PNG)
+## Sample Output
+
+![Resume Ranker Result](screenshots/Slide1.PNG)
