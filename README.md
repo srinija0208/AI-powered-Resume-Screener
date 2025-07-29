@@ -63,3 +63,4 @@ pip install -r requirements.txt
 ```
 streamlit run app.py
 ```
+![alt text](Slide1.PNG)
