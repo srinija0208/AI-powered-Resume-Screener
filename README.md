@@ -50,7 +50,7 @@ This is a **screening** tool — not a final selection system.
 1. **Clone the repository:**
 ```bash
 git clone https://github.com/srinija0208/AI-powered-Resume-Screener
-cd AI-Resume-Ranker
+cd AI-powered-Resume-Screener
 ```
 
 
